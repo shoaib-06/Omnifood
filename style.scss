@@ -80,6 +80,35 @@ html {
 /* GENERAL REUSABLE COMPONENTS */
 /**************************/
 
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid--center {
+  align-items: center;
+}
+
+.grid-col-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -133,6 +162,10 @@ html {
 
 .margin-right-sm {
   margin-right: 1.6rem;
+}
+
+strong {
+  font-weight: 500;
 }
 
 /**************************/
@@ -262,4 +295,125 @@ html {
       }
     }
   }
+}
+
+/**************************/
+/* FEATURE SECTION */
+/**************************/
+
+.featured-section {
+  padding: 4.8rem 0 3.2rem;
+
+  .feature-heading {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2.4rem;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .logos img {
+    height: 3.2rem;
+    display: block;
+    filter: brightness(0);
+    opacity: 0.5;
+  }
+}
+
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
+
+.how-it-works-section {
+  padding: 9.6rem 0;
+
+  .sub-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #cf711f;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+  }
+
+  .step-text-box {
+    .step-number {
+      font-size: 8.6rem;
+      font-weight: 600;
+      color: #ddd;
+      margin-bottom: 1.2rem;
+    }
+
+    .heading-tertiary {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 3.2rem;
+    }
+
+    .step-description {
+      font-size: 1.8rem;
+      line-height: 1.8;
+    }
+  }
+
+  .step-img-box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      background-color: #fdf2e9;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      width: 60%;
+      // height: 60%;
+      padding-bottom: 60%;
+      background-color: #fdf2e9;
+      z-index: -2;
+    }
+
+    &::after {
+      width: 45%;
+      // height: 60%;
+      padding-bottom: 45%;
+      background-color: #fae5d3;
+      z-index: -1;
+    }
+
+    img {
+      width: 35%;
+    }
+  }
+}
+
+/**************************/
+/* MEALS SECTION */
+/**************************/
+
+.meals-section {
+  padding: 9.6rem 0;
 }
