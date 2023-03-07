@@ -67,13 +67,13 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-}
 
-body {
-  font-family: "Rubik", serif;
-  font-weight: 400;
-  line-height: 1;
-  color: #555;
+  body {
+    font-family: "Rubik", serif;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+  }
 }
 
 /**************************/
@@ -107,26 +107,26 @@ body {
 .btn--full:visited {
   background-color: #e67e22;
   color: #fff;
-}
 
-.btn--full:hover,
-.btn--full:active {
-  background-color: #cf711f;
+  &:hover,
+  &:active {
+    background-color: #cf711f;
+  }
 }
 
 .btn--outline:link,
 .btn--outline:visited {
   background-color: #fff;
   color: #555;
-}
 
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: transparent;
-  // border: 3px solid #fff;
+  &:hover,
+  &:active {
+    background-color: transparent;
+    // border: 3px solid #fff;
 
-  /* Trick to add border inside */
-  box-shadow: inset 0 0 0 3px #fff;
+    /* Trick to add border inside */
+    box-shadow: inset 0 0 0 3px #fff;
+  }
 }
 
 //HELPER CLASSES
@@ -134,67 +134,132 @@ body {
 .margin-right-sm {
   margin-right: 1.6rem;
 }
+
+/**************************/
+/* HEADER SECTION */
+/**************************/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  padding: 0 4.8rem;
+  position: relative;
+  height: 9.6rem;
+
+  .logo {
+    height: 2.2rem;
+  }
+
+  .main-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 4.8rem;
+    list-style: none;
+
+    .main-nav-link:link,
+    .main-nav-link:visited {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover,
+      &:active {
+        color: #cf711f;
+      }
+    }
+
+    .nav-cta:link,
+    .nav-cta:visited {
+      background-color: #e67e22;
+      color: #fff;
+      padding: 1.2rem 2.4rem;
+      border-radius: 9px;
+      border: none;
+
+      &:hover,
+      &:active {
+        background-color: #cf711f;
+        color: #fff;
+      }
+    }
+  }
+}
+
 /**************************/
 /* HERO SECTION */
 /**************************/
 
 .hero-section {
   background-color: #fdf2e9;
-  padding: 9.6rem 0;
-}
+  padding: 4.8rem 0 9.6rem;
 
-.hero {
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 9.6rem;
-  align-items: center;
-}
+  .hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9.6rem;
+    align-items: center;
 
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
-}
+    .hero-text-box {
+      .heading-primary {
+        font-size: 5.2rem;
+        line-height: 1.05;
+        margin-bottom: 3.2rem;
+      }
 
-.heading-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
-}
+      .heading-description {
+        font-size: 2rem;
+        line-height: 1.6;
+        margin-bottom: 4.8rem;
+      }
 
-.clients {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  margin-top: 8rem;
-}
+      .clients {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        margin-top: 8rem;
 
-.clients-img {
-  display: flex;
-}
+        .clients-img {
+          display: flex;
 
-.clients-img img {
-  display: block;
-  height: 4.8rem;
-  width: 4.8rem;
-  border-radius: 50%;
-  border: 3px solid #fdf2e9;
-  margin-left: -1.6rem;
-}
+          & img {
+            display: block;
+            height: 4.8rem;
+            width: 4.8rem;
+            border-radius: 50%;
+            border: 3px solid #fdf2e9;
+            margin-right: -1.6rem;
 
-.clients-text {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
 
-.clients-text strong {
-  color: #cf711f;
-  font-weight: 700;
-}
+        .clients-text {
+          font-size: 1.8rem;
+          font-weight: 600;
 
-.hero-img {
-  width: 100%;
+          strong {
+            color: #cf711f;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .hero-img-box {
+      .hero-img {
+        width: 100%;
+      }
+    }
+  }
 }
