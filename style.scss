@@ -206,6 +206,27 @@ html {
   }
 }
 
+.lists {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    line-height: 1.2;
+    font-size: 1.8rem;
+
+    .list-icon {
+      height: 3rem;
+      width: 3rem;
+      color: #e67e22;
+    }
+  }
+}
+
 //HELPER CLASSES
 
 .margin-right-sm {
@@ -452,6 +473,12 @@ strong {
     overflow: hidden;
     transition: all 0.4s;
 
+    &:hover {
+      transform: translateY(-1.2rem);
+      box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+      ;
+    }
+
     .meal-img {
       width: 100%;
     }
@@ -516,31 +543,178 @@ strong {
     }
   }
 
-  .diets {
-    .lists {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
+  .all-recipes {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}
 
-      .list-item {
-        display: flex;
-        align-items: center;
-        gap: 1.6rem;
-        line-height: 1.2;
-        font-size: 1.8rem;
+/**************************/
+/* TESTIMONIALS SECTION */
+/**************************/
 
-        .list-icon {
-          height: 3rem;
-          width: 3rem;
-          color: #e67e22;
+.testimonials-section {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+
+  .testimonials-container {
+    padding: 9.6rem;
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 8rem;
+      row-gap: 4.8rem;
+
+      .testimonial {
+        .testimonial-img {
+          height: 6.4rem;
+          border-radius: 50%;
+          margin-bottom: 1.2rem;
+        }
+
+        .testimonial-text {
+          font-size: 1.8rem;
+          line-height: 1.8;
+          margin-bottom: 1.6rem;
+        }
+
+        .testimonial-name {
+          font-size: 1.6rem;
+          color: #6f6f6f;
         }
       }
     }
   }
 
-  .all-recipes {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    padding: 1.6rem;
+
+    .gallery-item {
+      overflow: hidden;
+
+      & img {
+        display: block;
+        width: 100%;
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+/**************************/
+/* PRICING SECTION */
+/**************************/
+
+.pricing-section {
+  padding: 9.6rem 0;
+
+  .pricing-plan {
+    border-radius: 11px;
+    width: 75%;
+
+    .plan-header {
+      text-align: center;
+      margin-bottom: 4.8rem;
+
+      .plan-name {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #cf711f;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        margin-bottom: 3.2rem;
+      }
+
+      .plan-price {
+        font-size: 6.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.6rem;
+
+        & span {
+          font-size: 3rem;
+          font-weight: 500;
+          margin-right: 0.8rem;
+        }
+      }
+
+      .plan-text {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: #6f6f6f;
+      }
+    }
+
+    .plan-sign-up {
+      text-align: center;
+      margin-top: 4.8rem;
+    }
+  }
+
+  .pricing--starter {
+    border: 2px solid #fdf2e9;
+    padding: 4.6rem;
+    justify-self: end;
+  }
+
+  .pricing--complete {
+    background-color: #fdf2e9;
+    padding: 4.8rem;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: "Best Value";
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #ffd43b;
+      color: #333;
+      padding: 0.8rem 8rem;
+      position: absolute;
+      top: 6%;
+      right: -18%;
+      transform: rotate(45deg);
+    }
+  }
+
+  .plan-details {
+    font-size: 1.6rem;
+    line-height: 1.6;
     text-align: center;
-    font-size: 1.8rem;
+  }
+
+  .feature {
+    .feature-icon {
+      background-color: #fdf2e9;
+      color: #e67e22;
+      height: 3.2rem;
+      width: 3.2rem;
+      border-radius: 50%;
+      padding: 1.6rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .feature-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1.6rem;
+    }
+
+    .feature-text {
+      font-size: 1.8em;
+      line-height: 1.8;
+    }
   }
 }

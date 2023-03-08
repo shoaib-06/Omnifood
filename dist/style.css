@@ -202,6 +202,25 @@ html body {
   border-bottom: 1px solid transparent;
 }
 
+.lists {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.lists .list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+  font-size: 1.8rem;
+}
+.lists .list-item .list-icon {
+  height: 3rem;
+  width: 3rem;
+  color: #e67e22;
+}
+
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
@@ -408,6 +427,10 @@ strong {
   overflow: hidden;
   transition: all 0.4s;
 }
+.meals-section .meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
 .meals-section .meal .meal-img {
   width: 100%;
 }
@@ -459,25 +482,149 @@ strong {
   width: 2.4rem;
   color: #e67e22;
 }
-.meals-section .diets .lists {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-.meals-section .diets .lists .list-item {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  line-height: 1.2;
-  font-size: 1.8rem;
-}
-.meals-section .diets .lists .list-item .list-icon {
-  height: 3rem;
-  width: 3rem;
-  color: #e67e22;
-}
 .meals-section .all-recipes {
   text-align: center;
   font-size: 1.8rem;
+}
+
+/**************************/
+/* TESTIMONIALS SECTION */
+/**************************/
+.testimonials-section {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+}
+.testimonials-section .testimonials-container {
+  padding: 9.6rem;
+}
+.testimonials-section .testimonials-container .testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 8rem;
+       column-gap: 8rem;
+  row-gap: 4.8rem;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial .testimonial-img {
+  height: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial .testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.testimonials-section .testimonials-container .testimonials .testimonial .testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+.testimonials-section .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.testimonials-section .gallery .gallery-item {
+  overflow: hidden;
+}
+.testimonials-section .gallery .gallery-item img {
+  display: block;
+  width: 100%;
+  transition: all 0.5s;
+}
+.testimonials-section .gallery .gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/**************************/
+/* PRICING SECTION */
+/**************************/
+.pricing-section {
+  padding: 9.6rem 0;
+}
+.pricing-section .pricing-plan {
+  border-radius: 11px;
+  width: 75%;
+}
+.pricing-section .pricing-plan .plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.pricing-section .pricing-plan .plan-header .plan-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #cf711f;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  margin-bottom: 3.2rem;
+}
+.pricing-section .pricing-plan .plan-header .plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.pricing-section .pricing-plan .plan-header .plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+.pricing-section .pricing-plan .plan-header .plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+.pricing-section .pricing-plan .plan-sign-up {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+.pricing-section .pricing--starter {
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+  justify-self: end;
+}
+.pricing-section .pricing--complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-section .pricing--complete:after {
+  content: "Best Value";
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #ffd43b;
+  color: #333;
+  padding: 0.8rem 8rem;
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  transform: rotate(45deg);
+}
+.pricing-section .plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.pricing-section .feature .feature-icon {
+  background-color: #fdf2e9;
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+  padding: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+.pricing-section .feature .feature-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.pricing-section .feature .feature-text {
+  font-size: 1.8em;
+  line-height: 1.8;
 }/*# sourceMappingURL=style.css.map */
