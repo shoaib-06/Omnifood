@@ -72,6 +72,7 @@ html body {
   font-weight: 400;
   line-height: 1;
   color: #555;
+  overflow-x: hidden;
 }
 
 /**************************/
@@ -287,32 +288,13 @@ strong {
   cursor: pointer;
   display: none;
 }
-
-.mobile-icon-nav {
+.btn-mobile-nav .mobile-icon-nav {
   height: 4.8rem;
   width: 4.8rem;
   color: #333;
 }
-
-.mobile-icon-nav[name=close-outline] {
+.btn-mobile-nav .mobile-icon-nav[name=close-outline] {
   display: none;
-}
-
-.sticky .header {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 8rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: rgba(255, 255, 255, 0.97);
-  z-index: 999;
-  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
-}
-
-.sticky .section-hero {
-  margin-top: 9.6rem;
 }
 
 /**************************/
@@ -577,6 +559,7 @@ strong {
 .testimonials-section .testimonials-container .testimonials {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   -moz-column-gap: 8rem;
        column-gap: 8rem;
   row-gap: 4.8rem;
@@ -713,7 +696,7 @@ strong {
 .cta-section .cta {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  box-sizing: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
   overflow: hidden;
   /* For Gradient */
@@ -814,6 +797,318 @@ strong {
   gap: 2.4rem;
 }
 
-/* CSS rules for tablet devices */
-/* CSS rules for mobile devices */
-/* CSS rules for xl desktops devices *//*# sourceMappingURL=style.css.map */
+/********** MEDIA QUERIES **********/
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+/**************************/
+/* BELOW 1400px (Smaller Screens) */
+/**************************/
+@media only screen and (max-width: 1399px) {
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+  .hero {
+    max-width: 120rem !important;
+  }
+  .testimonials-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  .testimonials-section .testimonials-container {
+    padding: 6.4rem;
+  }
+  .testimonials-section .testimonials-container .testimonials {
+    -moz-column-gap: 6.4rem;
+         column-gap: 6.4rem;
+  }
+}
+/**************************/
+/* BELOW 1199px (Landscape tablets) */
+/**************************/
+@media only screen and (max-width: 1199px) {
+  /* 9px/16px = .5625 * 100 = 56.25% */
+  html {
+    font-size: 56.25%;
+  }
+  .grid {
+    row-gap: 7rem;
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+  }
+  .heading-secondary {
+    font-size: 4rem;
+  }
+  .heading-tertiary {
+    font-size: 2.6rem;
+  }
+  .header {
+    padding: 0 3.5rem;
+  }
+  .header .main-nav-list {
+    gap: 3.5rem;
+  }
+  .hero {
+    gap: 5.2rem !important;
+  }
+  .testimonials-section {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .testimonials-section .testimonials-container {
+    padding: 0 3.5rem;
+  }
+  .testimonials-section .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/**************************/
+/* BELOW 991px (Smaller tablets) */
+/**************************/
+@media only screen and (max-width: 991px) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .heading-primary {
+    font-size: 4.5rem;
+  }
+  .heading-secondary {
+    font-size: 3.8rem;
+  }
+  .heading-tertiary {
+    font-size: 2.2rem;
+  }
+  .step-number {
+    font-size: 7rem !important;
+  }
+  .hero {
+    grid-template-columns: 1fr !important;
+    padding: 0 9rem !important;
+    gap: 8rem !important;
+    text-align: center;
+  }
+  .hero .clients {
+    justify-content: center;
+    margin-top: 4rem !important;
+  }
+  .hero .hero-img {
+    width: 60% !important;
+  }
+  .logos img {
+    height: 2.4rem !important;
+  }
+  .meals-content {
+    padding: 3rem !important;
+  }
+  .testimonials-section {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-section .testimonials-container {
+    padding: 9.5rem 3.5rem;
+  }
+  .testimonials-section .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
+    grid-template-columns: 3fr 2fr !important;
+  }
+  .cta .cta-form {
+    grid-template-columns: 1fr !important;
+  }
+  .cta .cta-form .btn--submit {
+    margin-top: 1.5rem;
+  }
+  .btn-mobile-nav {
+    display: block;
+    z-index: 999;
+  }
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    transform: translateX(100%);
+    /* Hide navigation */
+    /* But allows NO Transitions at all */
+    /* display: none; */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+  .main-nav .main-nav-list {
+    flex-direction: column;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem !important;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .nav-open .mobile-icon-nav[name=menu-outline] {
+    display: none;
+  }
+  .nav-open .mobile-icon-nav[name=close-outline] {
+    display: block !important;
+  }
+  .footer-link:link,
+  .footer-link:visited {
+    font-size: 1.5rem !important;
+  }
+}
+/**************************/
+/* BELOW 767px (Mobiles) */
+/**************************/
+@media only screen and (max-width: 767px) {
+  .grid-col-4,
+  .grid-col-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 4rem;
+  }
+  .heading-secondary {
+    margin-bottom: 6rem;
+  }
+  .diets {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+  .pricing-plan {
+    width: 100% !important;
+  }
+}
+/**************************/
+/* BELOW 576px (Small Mobiles) */
+/**************************/
+@media only screen and (max-width: 576px) {
+  .grid {
+    row-gap: 5rem;
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+  }
+  .grid-col-2,
+  .grid-col-3,
+  .grid-col-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .heading-primary {
+    font-size: 4.5rem;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+  .hero-section {
+    padding: 2.4rem 0 6.4rem;
+  }
+  .hero-section .hero {
+    padding: 0 2.4rem !important;
+  }
+  .hero-section .hero .hero-img {
+    width: 80% !important;
+  }
+  .logos img {
+    height: 1.6rem !important;
+  }
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+  .testimonials {
+    grid-template-columns: 1fr !important;
+  }
+  .gallery {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .feature {
+    padding: 0 6.4rem;
+    text-align: center;
+  }
+  .cta {
+    grid-template-columns: 1fr !important;
+  }
+  .cta .cta-text-box {
+    padding: 3.2rem !important;
+  }
+  .cta .cta-img-box {
+    grid-row: 1;
+    height: 40rem;
+  }
+}
+/**************************/
+/* Fixing Safari flexbox gap */
+/**************************/
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}/*# sourceMappingURL=style.css.map */
