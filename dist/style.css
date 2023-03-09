@@ -67,6 +67,7 @@ html {
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
   position: relative;
+  overflow-x: hidden;
 }
 html body {
   font-family: "Rubik", serif;
@@ -319,6 +320,7 @@ strong {
 /* HEADER SECTION */
 /**************************/
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1048,7 +1050,7 @@ strong {
     width: 80% !important;
   }
   .logos img {
-    height: 1.6rem !important;
+    height: 1.2rem !important;
   }
   .step-img-box {
     transform: translateY(2.4rem);
