@@ -68,6 +68,7 @@ html {
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
   position: relative;
+  overflow-x: hidden;
 
   body {
     font-family: "Rubik", serif;
@@ -1229,7 +1230,7 @@ strong {
   }
 
   .logos img {
-    height: 1.6rem !important;
+    height: 1.2rem !important;
   }
 
   .step-img-box {
